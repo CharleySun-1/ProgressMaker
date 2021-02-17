@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+  
+    // For driving animation to reveal rectangle with progress meter fill
+       @State private var progressMeterOffset = CGSize.zero
+    
     var body: some View {
         VStack {
             ZStack {
@@ -19,7 +23,13 @@ struct ContentView: View {
                     .fill(Color.primary)
                     .colorInvert()
                     .frame(width: 100, height: 548 - 44, alignment: .center)
-                    .offset(CGSize(width: 0, height: -1 * (548 - 44)))
+                    .offset(progressMeterOffset)
+                    .onAppear(perform: {
+                        withAnimation(Animation.easeIn(duration: 4.0)) {
+                            // Offset is moves the opaque rectangle up
+                            progressMeterOffset = CGSize(width: 0, height: -1 * (548 - 44))
+                        }
+                    })
             }
         }
     }
