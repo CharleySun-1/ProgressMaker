@@ -16,6 +16,8 @@ struct ContentView: View {
                     .frame(width: 100, height: 548 - 44, alignment: .center)
                 // Will slide up
                 Rectangle()
+                    .fill(Color.primary)
+                        .colorInvert()
                     .frame(width: 100, height: 548 - 44, alignment: .center)
             }
         }
