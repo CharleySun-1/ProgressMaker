@@ -9,8 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Rectangle()
-            .frame(width: 100, height: 548 - 44, alignment: .center)
+        VStack {
+            // "Fill" for progress meter; stationary
+            Rectangle()
+                .frame(width: 100, height: 548 - 44, alignment: .center)
+            // Will slide up
+            Rectangle()
+                .frame(width: 100, height: 548 - 44, alignment: .center)
+        }
     }
 }
 
