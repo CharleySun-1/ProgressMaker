@@ -17,8 +17,9 @@ struct ContentView: View {
                 // Will slide up
                 Rectangle()
                     .fill(Color.primary)
-                        .colorInvert()
+                    .colorInvert()
                     .frame(width: 100, height: 548 - 44, alignment: .center)
+                    .offset(CGSize(width: 0, height: -1 * (548 - 44)))
             }
         }
     }
