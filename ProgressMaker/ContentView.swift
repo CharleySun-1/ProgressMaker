@@ -22,7 +22,7 @@ struct ContentView: View {
     let verticalPadding: CGFloat = 44
     
     var body: some View {
-        
+        GeometryReader { geometry in
         VStack {
             
             Spacer()
@@ -68,9 +68,9 @@ struct ContentView: View {
             Spacer()
             
     }
+    }
 }
 }
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
